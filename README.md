@@ -7,7 +7,7 @@ Este repositório visa criar uma aplicação para o projeto Edux, que seria uma 
 
 ## Primero passo
 
-* Nós devemos ter a API que liga a aplicação com o banco de dados para que a aplicação rode perfeitamente, para isso, devemos ir <a href="http://github.com/jpedrodss/APIEdux">neste repositório</a> e seguir as instruções, após isso podemos retomar para o React Native da aplicação.
+* Nós devemos ter a API que liga a aplicação com o banco de dados para que a aplicação rode perfeitamente, para isso, devemos ir <a href="http://github.com/jpedrodss/APIEdux">neste repositório</a> e seguir as instruções, após isso podemos retomar aqui.
 
 ## Segundo passo
 
@@ -25,4 +25,4 @@ Este repositório visa criar uma aplicação para o projeto Edux, que seria uma 
 
 * Após ter feito essa alteração de IP na "constant", você pode usar a câmera do seu celular para ler o código QR que tem na página do Metro Bundler, ou por essa mesma página, você pode enviar um email para o seu celular e por lá, abrir a aplicação, mas essa opção você deverá ter uma conta Expo. Caso tenha uma conta Expo, você pode acessar diretamente o aplicativo que irá aparecer as aplicações que você estiver rodando na máquina. A mesma conta deve estar logada na máquina que está rodando, e no celular que será utilizado.
 
-* <strong>E pronto, a aplicação está rodando e você está utilizando :) Faça bom uso!</strong>
+* <strong>E pronto, a aplicação está rodando e você está utilizando :). Faça bom uso!</strong>

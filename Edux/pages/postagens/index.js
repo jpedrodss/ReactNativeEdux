@@ -1,12 +1,14 @@
 import React, {useState} from 'react';
-import { StyleSheet,TextInput, View } from 'react-native';
+import { StyleSheet,TextInput, View, TouchableOpacity, Text } from 'react-native';
+
+
+const postar = () =>{
+
+}
 
 const postagens = () =>{
     const [dica, setDica] = useState('');
     return(
-        <View style={styles.leres}>
-            <Text>Postagens</Text>
-        </View>,
         
         <View style={styles.container}>
             <TextInput
@@ -15,6 +17,14 @@ const postagens = () =>{
             value={dica}
             placeholder="Qual sua Dica para hoje?"
             />
+
+        <TouchableOpacity
+            style={styles.button}
+            onPress={postar}
+            >
+            <Text style={styles.textbutton}>Postar</Text>
+        </TouchableOpacity>
+
         </View>
     )
 }
@@ -27,17 +37,27 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
+      display: 'flex'
     },
     input : {
-        width : '90%',
-        height: 40, 
-        borderColor: 'gray', 
+        width : '80%',
+        height: 67, 
+        borderColor: 'purple', 
         borderWidth: 1,
-        marginTop : 20,
+        marginBottom: 30,
+        display: 'flex',
         padding: 5,
-        borderRadius: 8
+        borderRadius: 6
     },
-    leres : {
-        backgroundColor : '#9200D6'
+    button : {
+        backgroundColor: 'purple',
+        width : '40%',
+        padding: 10,
+        marginLeft: 200,
+        borderRadius: 8,   
+        alignItems: 'center'
+    },
+    textbutton: {
+        color: 'white'
     }
   });

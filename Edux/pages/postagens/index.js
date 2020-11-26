@@ -6,6 +6,10 @@ const postar = () =>{
 
 }
 
+const EscImg = () =>{
+
+}
+
 const postagens = () =>{
     const [dica, setDica] = useState('');
     return(
@@ -25,6 +29,13 @@ const postagens = () =>{
             <Text style={styles.textbutton}>Postar</Text>
         </TouchableOpacity>
 
+        <TouchableOpacity
+            style={styles.buttons}
+            onPress={EscImg}
+            >
+            <Text style={styles.textbutton}>Escolher Imagem</Text>
+        </TouchableOpacity>
+
         </View>
     )
 }
@@ -40,7 +51,7 @@ const styles = StyleSheet.create({
       display: 'flex'
     },
     input : {
-        width : '80%',
+        width : 318,
         height: 67, 
         borderColor: 'purple', 
         borderWidth: 1,
@@ -51,13 +62,30 @@ const styles = StyleSheet.create({
     },
     button : {
         backgroundColor: 'purple',
-        width : '40%',
+        width : 140,
+        height:  30,
         padding: 10,
-        marginLeft: 200,
+        marginLeft: 150,
         borderRadius: 8,   
-        alignItems: 'center'
+        justifyContent: 'center',
+        alignItems: 'center',
+        display: 'flex'
     },
     textbutton: {
         color: 'white'
+    },
+    buttons:{
+        backgroundColor: '#BBBBBB',
+        width : 140,
+        height:  30,
+        padding: 10,
+        borderRadius: 8,   
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginRight: 150,
+        display: 'flex',
+        marginBottom: 150
+        
     }
+
   });

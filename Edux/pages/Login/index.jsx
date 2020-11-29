@@ -4,7 +4,7 @@ import { url } from '../../utils/constants'
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const Login = ({ navigation }) => {
+export default function Login({ navigation }) {
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
 
@@ -34,7 +34,6 @@ const Login = ({ navigation }) => {
             .then(data => {
                 console.log(data);
                 if (data.status != 404) {
-                    alert('Seja bem vindo');
 
                     salvar(data.token);
                     navigation.push('Autenticado');
@@ -46,42 +45,40 @@ const Login = ({ navigation }) => {
     }
 
     return (
-        <KeyboardAvoidingView
-            behavior={Platform.OS == "ios" ? "padding" : "height"}
-            style={styles.container}
-        >
-            <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-                <View style={styles.container}>
-                    <Text style={{fontWeight: 1000, fontSize: 80, color: 'white'}}>Edux</Text>
-                    <Text style={styles.textoHeader}>LOGIN</Text>
-                    <TextInput
-                        style={styles.input}
-                        placeholder="Email"
-                        onChangeText={text => setEmail(text)}
-                        defaultValue={email}
-                        keyboardType={"email-address"}
-                        autoCorrect={false}
-                    />
-                    <TextInput
-                        style={styles.input}
-                        placeholder="Senha"
-                        onChangeText={text => setSenha(text)}
-                        defaultValue={senha}
-                        secureTextEntry={true}
-                    />
-                    <TouchableOpacity
-                        style={styles.button}
-                        onPress={Logar}
-                    >
-                        <Text style={styles.textButton}>Entrar</Text>
-                    </TouchableOpacity>
-                </View>
-            </TouchableWithoutFeedback>
-        </KeyboardAvoidingView>
+        // <KeyboardAvoidingView
+        //     behavior={Platform.OS == "ios" ? "padding" : "height"}
+        //     style={styles.container}
+        // >
+        // <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <View style={styles.container}>
+            <Text style={{ fontFamily: 'Titillium Web', fontWeight: "1000", fontSize: 80, color: 'white' }}>Edux</Text>
+            <Text style={styles.textoHeader}>LOGIN</Text>
+            <TextInput
+                style={styles.input}
+                placeholder="Email"
+                onChangeText={text => setEmail(text)}
+                defaultValue={email}
+                keyboardType={"email-address"}
+                autoCorrect={false}
+            />
+            <TextInput
+                style={styles.input}
+                placeholder="Senha"
+                onChangeText={text => setSenha(text)}
+                defaultValue={senha}
+                secureTextEntry={true}
+            />
+            <TouchableOpacity
+                style={styles.button}
+                onPress={Logar}
+            >
+                <Text style={styles.textButton}>Entrar</Text>
+            </TouchableOpacity>
+        </View>
+        /* </TouchableWithoutFeedback> */
+        // </KeyboardAvoidingView>
     )
 }
-
-export default Login;
 
 const styles = StyleSheet.create({
     container: {
@@ -93,9 +90,10 @@ const styles = StyleSheet.create({
     textoHeader: {
         color: 'white',
         margin: 10,
-        fontWeight: 700,
+        fontWeight: "700",
         marginBottom: 15,
-        fontSize: 24
+        fontSize: 24,
+        fontFamily: 'Titillium Web'
     },
     input: {
         width: 250,
@@ -108,7 +106,8 @@ const styles = StyleSheet.create({
         padding: 5,
         paddingLeft: 10,
         borderRadius: 10,
-        fontWeight: 1000
+        fontWeight: "700",
+        fontFamily: 'Titillium Web'
     },
     button: {
         backgroundColor: 'white',
@@ -120,8 +119,9 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     textButton: {
-        fontWeight: 1000,
-        color: '#8404D9'
+        fontWeight: "700",
+        color: '#8404D9',
+        fontFamily: 'Titillium Web'
     }
 
 });

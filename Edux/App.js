@@ -4,19 +4,48 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet, View, TouchableOpacity } from 'react-native';
 
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+// Pages
+import Turmas from './pages/Turmas';
 import Login from './pages/Login'
 import Home from './pages/Home';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-const Autenticado = () => {
+const BottomNavigator = () => {
   return (
-    <Tab.Navigator initialRouteName="Home" >
+    <Tab.Navigator initialRouteName="Home"
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
+
+          if (route.name === 'Home') {
+            iconName = focused ? 'ios-home' : 'ios-home';
+          } else if (route.name === 'Alunos') {
+            iconName = focused ? 'ios-contacts' : 'ios-contacts';
+          } else if (route.name === 'Turmas') {
+            iconName = focused ? 'ios-list-box' : 'ios-list';
+          }
+
+          return <Ionicons name={iconName} size={size} color={color} />;
+        },
+      })}
+      tabBarOptions={{
+        style: {
+          backgroundColor: '#00D65F',
+          borderStyle: 'solid',
+        },
+        activeTintColor: 'white',
+        inactiveTintColor: '#333',
+        fontFamily: 'Titillium Web'
+      }}
+    >
       <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Turmas" component={Turmas} />
     </Tab.Navigator>
   )
 }
@@ -26,7 +55,7 @@ export default function App({ navigation }) {
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: true }}>
         <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
-        <Stack.Screen name="Autenticado" component={Autenticado} options={{
+        <Stack.Screen name="BottomNavigator" component={BottomNavigator} options={{
           headerTitle: "Edux",
           headerTitleStyle: {
             fontSize: 36,
@@ -59,7 +88,7 @@ export default function App({ navigation }) {
   );
 }
 
-export const styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, KeyboardAvoidingView, Platform, View, TextInput, TouchableOpacity, Image, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import { url } from '../../utils/constants'
 
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Login({ navigation }) {
@@ -36,7 +37,7 @@ export default function Login({ navigation }) {
                 if (data.status != 404) {
 
                     salvar(data.token);
-                    navigation.push('Autenticado');
+                    navigation.push('BottomNavigator');
                 } else {
                     alert('Email ou senha inválidos! :( ');
                 }

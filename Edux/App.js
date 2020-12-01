@@ -19,7 +19,7 @@ const posta = () => {
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{ headerShown : false }}>
          <Stack.Screen name="postagens" component={postagens}></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>

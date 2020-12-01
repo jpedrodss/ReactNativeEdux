@@ -1,5 +1,6 @@
 import React from 'react';
 import { createStackNavigator, HeaderTitle } from '@react-navigation/stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet, View, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
@@ -12,7 +13,9 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Turmas from './pages/Turmas';
 import Login from './pages/Login';
 import Home from './pages/Home';
+import Alunos from './pages/Alunos';
 
+const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -46,16 +49,21 @@ const BottomNavigator = () => {
     >
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Turmas" component={Turmas} />
+      <Tab.Screen name="Alunos" component={Alunos} />
     </Tab.Navigator>
   )
+}
+
+const Hidden = () => {
+  return null;
 }
 
 export default function App({ navigation }) {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: true }}>
-        <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
-        <Stack.Screen name="BottomNavigator" component={BottomNavigator} options={{
+      <Drawer.Navigator screenOptions={{ headerShown: true }}>
+        <Drawer.Screen name="Login" component={Login} options={{ headerShown: false, drawerLabel: Hidden }} />
+        <Drawer.Screen name="BottomNavigator" component={BottomNavigator} options={{
           headerTitle: "Edux",
           headerTitleStyle: {
             fontSize: 36,
@@ -81,9 +89,10 @@ export default function App({ navigation }) {
                 <MaterialCommunityIcons name="logout" color={"white"} size={30} />
               </TouchableOpacity>
             </View>
-          )
+          ),
+          drawerLabel: "Ranking"
         }} />
-      </Stack.Navigator>
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 }

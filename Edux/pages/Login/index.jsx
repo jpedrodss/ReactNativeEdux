@@ -37,7 +37,7 @@ export default function Login({ navigation }) {
                 if (data.status != 404) {
 
                     salvar(data.token);
-                    navigation.push('BottomNavigator');
+                    navigation.navigate('BottomNavigator');
                 } else {
                     alert('Email ou senha inválidos! :( ');
                 }

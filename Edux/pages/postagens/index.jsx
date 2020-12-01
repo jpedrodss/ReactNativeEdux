@@ -26,9 +26,6 @@ const postagens = () => {
                 </Text>
             </View>
 
-
-
-
             <View>
                 <TextInput
                     style={styles.input}
@@ -37,9 +34,6 @@ const postagens = () => {
                     placeholder="Qual sua Dica para hoje?"
                 />
             </View>
-
-
-
 
             <View style={styles.botoes}>
                 <TouchableOpacity
@@ -115,4 +109,3 @@ const styles = StyleSheet.create({
     }
 });
 
-//   colocar numa view we dar space around  

@@ -41,21 +41,19 @@ const postagens = () =>{
          
 
         
-            <View>
-                <TouchableOpacity
-                    style={styles.button}
-                    onPress={postar}
-                    >
-                    <Text style={styles.textbutton}>Postar</Text>
-                </TouchableOpacity>
-            
-
-            
+            <View style={styles.botoes}>
                 <TouchableOpacity
                     style={styles.buttons}
                     onPress={EscImg}
                     >
                     <Text style={styles.textbutton}>Escolher Imagem</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    style={styles.button}
+                    onPress={postar}
+                    >
+                    <Text style={styles.textbutton}>Postar</Text>
                 </TouchableOpacity>
             </View>
        
@@ -99,13 +97,18 @@ const styles = StyleSheet.create({
         height:  30,
         padding: 10,
         borderRadius: 8,   
-        justifyContent:'center'
+        justifyContent:'center',
+        marginRight: 10
     },
     H1: {
         color: 'purple',
         fontSize: 30
     },
-
+    botoes: {
+        flex: 1,
+        flexDirection: "row",
+        marginTop: 10
+    }
   });
 
 //   colocar numa view we dar space around  

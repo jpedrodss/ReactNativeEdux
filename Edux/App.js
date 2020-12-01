@@ -61,39 +61,39 @@ const Hidden = () => {
 export default function App({ navigation }) {
   return (
     <NavigationContainer>
-      <Drawer.Navigator screenOptions={{ headerShown: true }}>
+      <Drawer.Navigator screenOptions={{
+        headerShown: true,
+        headerTitle: "Edux",
+        headerTitleStyle: {
+          fontSize: 36,
+          fontWeight: "900",
+          color: 'white',
+          fontFamily: 'Titillium Web'
+        },
+        headerStyle: {
+          backgroundColor: '#8404D9',
+          borderBottomWidth: 0
+        },
+        headerLeft: null,
+        headerRight: () => (
+          <View>
+            <TouchableOpacity
+              onPress={() => {
+                AsyncStorage.removeItem('@jwt');
+                navigation.push('Login');
+              }}
+              style={{ marginRight: 20 }}
+              underlayColor={"#8404D9"}
+            >
+              <MaterialCommunityIcons name="logout" color={"white"} size={30} />
+            </TouchableOpacity>
+          </View>
+        )
+      }} >
         <Drawer.Screen name="Login" component={Login} options={{ headerShown: false, drawerLabel: Hidden }} />
-        <Drawer.Screen name="BottomNavigator" component={BottomNavigator} options={{
-          headerTitle: "Edux",
-          headerTitleStyle: {
-            fontSize: 36,
-            fontWeight: "900",
-            color: 'white',
-            fontFamily: 'Titillium Web'
-          },
-          headerStyle: {
-            backgroundColor: '#8404D9',
-            borderBottomWidth: 0
-          },
-          headerLeft: null,
-          headerRight: () => (
-            <View>
-              <TouchableOpacity
-                onPress={() => {
-                  AsyncStorage.removeItem('@jwt');
-                  navigation.push('Login');
-                }}
-                style={{ marginRight: 20 }}
-                underlayColor={"#8404D9"}
-              >
-                <MaterialCommunityIcons name="logout" color={"white"} size={30} />
-              </TouchableOpacity>
-            </View>
-          ),
-          drawerLabel: "Ranking"
-        }} />
+        <Drawer.Screen name="BottomNavigator" component={BottomNavigator} options={{ drawerLabel: "Ranking" }} />
       </Drawer.Navigator>
-    </NavigationContainer>
+    </NavigationContainer >
   );
 }
 

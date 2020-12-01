@@ -14,6 +14,7 @@ import Turmas from './pages/Turmas';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Alunos from './pages/Alunos';
+import postagens from './pages/postagens';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -92,6 +93,7 @@ export default function App({ navigation }) {
       }} >
         <Drawer.Screen name="Login" component={Login} options={{ headerShown: false, drawerLabel: Hidden }} />
         <Drawer.Screen name="BottomNavigator" component={BottomNavigator} options={{ drawerLabel: "Ranking" }} />
+        <Drawer.Screen name="postagens" component={postagens} options={{ drawerLabel: "Postagens" }} />
       </Drawer.Navigator>
     </NavigationContainer >
   );

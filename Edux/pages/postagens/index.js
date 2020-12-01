@@ -30,12 +30,12 @@ const postagens = () =>{
         
 
            <View>
-            <TextInput
-                style={styles.input}
-                onChangeText={text => setDica(text)}
-                value={dica}
-                placeholder="Qual sua Dica para hoje?"
-                />
+           <TextInput
+            style={styles.input}
+            onChangeText={text => setDica(text)}
+            value={dica}
+            placeholder="Qual sua Dica para hoje?"
+            />
            </View>
         
          

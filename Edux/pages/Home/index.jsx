@@ -13,8 +13,6 @@ export default function Home() {
                     <View>João Pedro</View>
                     <View style={{ fontWeight: "400" }}>1º Desenvolvimento de Sistemas</View>
                 </View>
-
-
             </View>
 
             <View style={styles.circles}>

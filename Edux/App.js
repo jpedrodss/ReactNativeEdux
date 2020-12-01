@@ -1,16 +1,16 @@
 import React from 'react';
 import { createStackNavigator, HeaderTitle } from '@react-navigation/stack';
-import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet, View, TouchableOpacity } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 // Pages
 import Turmas from './pages/Turmas';
-import Login from './pages/Login'
+import Login from './pages/Login';
 import Home from './pages/Home';
 
 const Stack = createStackNavigator();

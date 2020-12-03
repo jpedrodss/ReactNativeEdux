@@ -13,7 +13,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Turmas from './pages/Turmas';
 import Login from './pages/Login';
 import Home from './pages/Home';
-import Alunos from './pages/Alunos';
+import Objetivos from './pages/Objetivos';
 import postagens from './pages/postagens';
 
 

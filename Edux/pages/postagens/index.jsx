@@ -115,4 +115,4 @@ const styles = StyleSheet.create({
     }
 });
 
-//   colocar numa view we dar space around  
+ 

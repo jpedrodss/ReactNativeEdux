@@ -15,7 +15,7 @@ import Login from './pages/Login';
 import Home from './pages/Home';
 import Alunos from './pages/Alunos';
 import postagens from './pages/postagens';
-import imagemCamera from './pages/imagemCamera';
+
 
 
 const Drawer = createDrawerNavigator();
@@ -52,9 +52,8 @@ const BottomNavigator = () => {
     >
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Turmas" component={Turmas} />
-      <Tab.Screen name="Objetivos" component={Objetivos} />
+      <Tab.Screen name="Alunos" component={Alunos} />
       <Tab.Screen name="postagens" component={postagens} />
-      <Tab.Screen name="imagemCamera" component={imagemCamera} />
     </Tab.Navigator>
   )
 }

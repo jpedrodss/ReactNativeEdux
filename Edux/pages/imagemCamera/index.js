@@ -1,17 +1,44 @@
 import React, {useState} from 'react';
 import {View, TouchableOpacity, Text, StyleSheet, Image} from 'react-native';
-import ImagePicker from 'react-native-image-picker';
+
+var ImagePicker = require('react-native-image-picker');
+
+
 
 
 export default function Upload() {
 
-    function ImagePickeCallback(data) {
-        console.log(data);
-    }
+
+    function imagePickerCallback(data) {
+        if (data.didCancel) {
+          return;
+        }
+    
+        if (data.error) {
+          return;
+        }
+    
+        if (data.customButton) {
+          return;
+        }
+    
+        if (!data.uri) {
+          return;
+        }
+    
+        setPubli(data);
+      }
+    
+    
 
     return(
         <View style={styles.container}>
-            <TouchableOpacity style={styles.button} onPress={() => ImagePicker.launchImageLibrary({}, ImagePickeCallback )}>
+            
+            <TouchableOpacity 
+             style={styles.button}
+             onPress={() =>
+                ImagePicker.showImagePicker( (imagePickerCallback)  )  }>
+
                     <Text style={styles.textbutton}>Escolher Imagem</Text>
             </TouchableOpacity>
 
@@ -46,6 +73,7 @@ const styles = StyleSheet.create({
         left: 0,
         top: 0,
         borderRadius: 6
-        
     }
-})
+
+
+});

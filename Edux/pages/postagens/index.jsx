@@ -55,7 +55,11 @@ const postagens = () => {
                 >
                     <Text style={styles.textbutton}>Postar</Text>
                 </TouchableOpacity>
+
+                
             </View>
+
+
 
 
         </View>

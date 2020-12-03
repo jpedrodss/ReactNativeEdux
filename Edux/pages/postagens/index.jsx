@@ -1,77 +1,62 @@
 import React, { useState } from 'react';
 import { StyleSheet, TextInput, View, TouchableOpacity, Text } from 'react-native';
 
-export default function Postagens() {
 
+
+const postagens = () => {
+
+
+    const postar = () => {
+
+    }
+
+    const EscImg = () => {
+
+    }
+
+    const [dica, setDica] = useState('');
+    return (
+
+        <View style={styles.container}>
+
+
+            <View>
+                <Text style={styles.H1}>
+                    POSTAGENS
+                </Text>
+            </View>
+
+            <View>
+                <TextInput
+                    style={styles.input}
+                    onChangeText={text => setDica(text)}
+                    value={dica}
+                    placeholder="Qual sua Dica para hoje?"
+                />
+            </View>
+
+            <View style={styles.botoes}>
+                <TouchableOpacity
+                    style={styles.buttons}
+                    onPress={EscImg}
+                >
+                    <Text style={styles.textbutton}>Escolher Imagem</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    style={styles.button}
+                    onPress={postar}
+                >
+                    <Text style={styles.textbutton}>Postar</Text>
+                </TouchableOpacity>
+            </View>
+
+
+        </View>
+    )
 }
 
-
-
-
-// const postagens = () => {
-
-
-//     const postar = () => {
-
-//     }
-
-//     const EscImg = () => {
-
-//     }
-
-//     const [dica, setDica] = useState('');
-//     return (
-
-//         <View style={styles.container}>
-
-
-//             <View>
-//                 <Text style={styles.H1}>
-//                     POSTAGENS
-//                 </Text>
-//             </View>
-
-
-
-
-//             <View>
-//                 <TextInput
-//                     style={styles.input}
-//                     onChangeText={text => setDica(text)}
-//                     value={dica}
-//                     placeholder="Qual sua Dica para hoje?"
-//                 />
-//             </View>
-
-
-
-
-//             <View style={styles.botoes}>
-//                 <TouchableOpacity
-//                     style={styles.buttons}
-//                     onPress={EscImg}
-//                 >
-//                     <Text style={styles.textbutton}>Escolher Imagem</Text>
-//                 </TouchableOpacity>
-
-//                 <TouchableOpacity
-//                     style={styles.button}
-//                     onPress={postar}
-//                 >
-//                     <Text style={styles.textbutton}>Postar</Text>
-//                 </TouchableOpacity>
-
-                
-//             </View>
-
-
-
-
-//         </View>
-//     )
-// }
-
-// export default postagens;
+export default postagens;
 
 const styles = StyleSheet.create({
     container: {
@@ -124,4 +109,3 @@ const styles = StyleSheet.create({
     }
 });
 
- 

@@ -31,10 +31,10 @@ const BottomNavigator = () => {
 
           if (route.name === 'Home') {
             iconName = focused ? 'ios-home' : 'ios-home';
-          } else if (route.name === 'Alunos') {
-            iconName = focused ? 'ios-contacts' : 'ios-contacts';
-          } else if (route.name === 'Turmas') {
+          } else if (route.name === 'Objetivos') {
             iconName = focused ? 'ios-list-box' : 'ios-list';
+          } else if (route.name === 'Turmas') {
+            iconName = focused ? 'ios-contacts' : 'ios-contacts';
           }
 
           return <Ionicons name={iconName} size={size} color={color} />;
@@ -52,7 +52,7 @@ const BottomNavigator = () => {
     >
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Turmas" component={Turmas} />
-      <Tab.Screen name="Alunos" component={Alunos} />
+      <Tab.Screen name="Objetivos" component={Objetivos} />
       <Tab.Screen name="postagens" component={postagens} />
       <Tab.Screen name="imagemCamera" component={imagemCamera} />
     </Tab.Navigator>

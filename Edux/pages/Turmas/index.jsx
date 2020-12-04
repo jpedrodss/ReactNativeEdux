@@ -40,6 +40,11 @@ export default function Turmas() {
             }}
           />
           <h2 className="tituloCard">Desenvolvimento de Sistemas</h2>
+          <FlatList
+            style={styles.margem}
+            data={DATA}
+            renderItem={renderItem}
+            keyExtractor={item => item.id}/>
         </div>
       </div>
     </View>
@@ -71,7 +76,7 @@ const styles = StyleSheet.create({
     height: '3.5em',
     borderRadius: '4em',
   },
-  margemE: {
+  margem: {
     marginLeft: '0.3em',
     marginTop: '0.2em',
   },

@@ -93,8 +93,8 @@ export default function App() {
           </View>
         )
       }} >
-        <Drawer.Screen name="BottomNavigator" component={BottomNavigator} options={{ drawerLabel: "Ranking" }} />
         <Drawer.Screen name="Login" component={Login} options={{ headerShown: false, drawerLabel: Hidden }} />
+        <Drawer.Screen name="BottomNavigator" component={BottomNavigator} options={{ drawerLabel: "Ranking" }} />
         <Drawer.Screen name="postagens" component={postagens} options={{ drawerLabel: "Postagens" }} />
       </Drawer.Navigator>
     </NavigationContainer >

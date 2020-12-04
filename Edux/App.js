@@ -61,7 +61,7 @@ const Hidden = () => {
   return null;
 }
 
-export default function App({ navigation }) {
+export default function App() {
   return (
     <NavigationContainer>
       <Drawer.Navigator screenOptions={{
@@ -78,12 +78,12 @@ export default function App({ navigation }) {
           borderBottomWidth: 0
         },
         headerLeft: null,
-        headerRight: () => (
+        headerRight: ({ navigation }) => (
           <View>
             <TouchableOpacity
               onPress={() => {
                 AsyncStorage.removeItem('@jwt');
-                navigation.push('Login');
+                navigation.navigate('Login')
               }}
               style={{ marginRight: 20 }}
               underlayColor={"#8404D9"}
@@ -93,8 +93,8 @@ export default function App({ navigation }) {
           </View>
         )
       }} >
-        <Drawer.Screen name="Login" component={Login} options={{ headerShown: false, drawerLabel: Hidden }} />
         <Drawer.Screen name="BottomNavigator" component={BottomNavigator} options={{ drawerLabel: "Ranking" }} />
+        <Drawer.Screen name="Login" component={Login} options={{ headerShown: false, drawerLabel: Hidden }} />
         <Drawer.Screen name="postagens" component={postagens} options={{ drawerLabel: "Postagens" }} />
       </Drawer.Navigator>
     </NavigationContainer >
